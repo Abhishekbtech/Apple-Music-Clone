@@ -17,7 +17,7 @@ function HomePage() {
             <div className="text-center mt-19 pt-10 text-white">
                 <div className="flex justify-center items-center">
                     <img src={im} alt="Logo" className="h-8 w-8" />
-                    <span className="ml-3 text-xl font-semibold">Music</span>
+                    <span className="ml-3 text-2xl font-semibold">Music</span>
                 </div>
                 <h1 className="text-4xl font-bold mt-1">Discover new music every day.</h1>
                 <p className="mt-4 text-lg mb-0">Get playlists and albums inspired by the artists and </p>

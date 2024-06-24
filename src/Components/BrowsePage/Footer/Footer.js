@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="text-white">
             <div className="max-w-7xl mx-auto py-6 px-4">
-                <div className="flex justify-center space-x-4">
+                <div className="flex flex-wrap justify-center space-x-4 space-y-2 sm:space-y-0 sm:space-x-4">
                     <a href="#" className="hover:underline">United States</a>
                     <a href="#" className="hover:underline">Español (México)</a>
                     <a href="#" className="hover:underline">العربية</a>
@@ -18,7 +18,7 @@ const Footer = () => {
                 </div>
                 <div className="mt-6 text-center text-xs">
                     <p>Copyright © 2024 Apple Inc. All rights reserved.</p>
-                    <div className="flex justify-center space-x-4 mt-2">
+                    <div className="flex flex-wrap justify-center space-x-4 space-y-2 sm:space-y-0 sm:space-x-4 mt-2">
                         <a href="#" className="hover:underline">Internet Service Terms</a>
                         <a href="#" className="hover:underline">Apple Music & Privacy</a>
                         <a href="#" className="hover:underline">Cookie Warning</a>

@@ -45,8 +45,8 @@ function AudioPlayer() {
 
     return (
         <div className="navbar-audio-player flex flex-row items-center gap-5">
-            <h3 className="text-lg font-semibold">{selectedMusic.title}</h3>
-            <img src={selectedMusic.thumbnail ? selectedMusic.thumbnail : 'https://via.placeholder.com/150'} alt={selectedMusic.title} className="w-16 h-16 rounded mr-2" />
+            {/* <h3 className="text-lg font-semibold">{selectedMusic.title}</h3> */}
+            <img src={selectedMusic.thumbnail ? selectedMusic.thumbnail : 'https://via.placeholder.com/150'} alt={selectedMusic.title} className="w-16 h-16 rounded" />
             {selectedMusic.audio_url ? (
                 <audio controls autoPlay src={selectedMusic.audio_url}>
                     Your browser does not support the audio element.

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { HomeIcon, ViewGridIcon, LibraryIcon, MusicNoteIcon, SearchIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { MusicContext } from '../Context/MusicContext';
+import im from '../imagr/icons8-apple-24.png';
 
 const Sidebar = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -49,7 +50,11 @@ const Sidebar = () => {
                 </button>
             </div>
 
-            <div className={`fixed top-0 left-0 h-full w-64 bg-gradient-to-b from-indigo-900 to-purple-600 shadow-md pt-16 transition-transform transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 z-30`}>
+            <div className={`fixed top-0 left-0 h-full w-64 bg-gradient-to-b from-indigo-900 to-purple-600 shadow-md transition-transform transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 z-30`}>
+                <div className="p-4 pl-10 flex items-center">
+                    <img src={im} alt="Logo" className="h-8 w-8" />
+                    <span className="ml-3 text-3xl font-semibold text-white">Music</span>
+                </div>
                 <div className="p-4 mt-6">
                     <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -75,7 +80,7 @@ const Sidebar = () => {
                         </div>
                     )}
                 </div>
-                <div className="mt-6">
+                <div className="mt-6 pl-3">
                     <nav>
                         <ul>
                             <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">

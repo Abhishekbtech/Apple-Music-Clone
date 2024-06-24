@@ -1,4 +1,3 @@
-// src/TopNavBar.js
 import React, { useState } from 'react';
 import { UserIcon } from '@heroicons/react/outline';
 import Sing from '../SingINpage/Sing';
@@ -23,14 +22,14 @@ const TopNavBar = () => {
 
     const handleLogout = () => {
         setIsLoggedIn(false);
-        setSignInOpen(false); // Close the modal on logout
+        setSignInOpen(false);
     };
 
     return (
         <div className="bg-gradient-to-r from-indigo-900 via-purple-400 to-purple-600 shadow-md fixed w-full flex items-center justify-between px-4 py-2 z-10">
             <div className="p-4 flex items-center">
                 <img src={im} alt="Logo" className="h-8 w-8" />
-                <span className="ml-3 text-xl font-semibold">Music</span>
+                <span className="ml-3 text-2xl font-semibold">Music</span>
             </div>
             <div className="flex items-center ml-20">
                 <AudioPlayer />
@@ -38,7 +37,7 @@ const TopNavBar = () => {
             <div className="flex items-center space-x-2">
                 <button className="bg-pink-600 text-white px-3 py-3 rounded-full" onClick={openSignIn}>
                     <UserIcon className="h-4 w-4 inline-block mr-1" />
-                    {isLoggedIn ? 'Log In' : 'Sign In'}
+                    {isLoggedIn ? 'Hello User' : 'Sign In'}
                 </button>
             </div>
             <Sing

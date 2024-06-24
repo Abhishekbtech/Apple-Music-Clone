@@ -36,9 +36,6 @@ function BrowsePage() {
                 <section className="mt-8">
                     <Artists />
                 </section>
-                <section className="mt-8">
-                    <Footer/>
-                </section>
             </Suspense>
         </div>
     );
