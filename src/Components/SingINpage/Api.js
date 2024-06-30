@@ -15,8 +15,6 @@ export const login = async (email, password) => {
             appType: 'music'
         })
     });
-    // const data = await response.json()
-    // console.log(data.token)
     return response.json();
 };
 
