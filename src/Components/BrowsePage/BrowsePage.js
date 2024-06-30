@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-import Footer from './Footer/Footer';
 
 // Lazy load mood components and Artists component
 const Romantic = React.lazy(() => import('./Mood/Romantic'));
