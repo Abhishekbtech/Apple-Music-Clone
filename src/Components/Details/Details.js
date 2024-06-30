@@ -6,7 +6,6 @@ function Details() {
     const location = useLocation();
     const { state } = location;
     const { song } = state || {};
-    // console.log(song)
     const { setSelectedMusic } = useContext(MusicContext);
 
     const handleSongClick = (songItem) => {
