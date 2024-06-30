@@ -3,10 +3,9 @@ import IM from './Image/large.webp';
 import im from '../imagr/icons8-apple-24.png'
 
 function HomePage() {
+    
     useEffect(() => {
-        // Disable scrolling on mount
         document.body.style.overflow = 'hidden';
-        // Re-enable scrolling when component unmounts
         return () => {
             document.body.style.overflow = 'unset';
         };
