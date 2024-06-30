@@ -41,10 +41,6 @@ function Excited() {
         });
     };
 
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
-
     return (
         <>
             <h2 className="text-xl font-semibold mb-2 ml-9">Party Songs</h2>
