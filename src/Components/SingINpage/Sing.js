@@ -16,7 +16,6 @@ function Sing({ isOpen, onClose, onLogin, onLogout }) {
         const token = sessionStorage.getItem('token');
         if (token) {
             setActiveForm('postlogin');
-            // setMessage('You are logged in!');
         }
     }, []);
 
@@ -67,7 +66,7 @@ function Sing({ isOpen, onClose, onLogin, onLogout }) {
             const data = await login(formData.email, formData.password);
             sessionStorage.setItem('token', data.token);
             setActiveForm('postlogin');
-            onLogin(); // Notify parent component about login
+            onLogin();
         } catch (error) {
             console.error('Error:', error);
             setMessage('Login failed. Please try again.');
@@ -108,10 +107,10 @@ function Sing({ isOpen, onClose, onLogin, onLogout }) {
     };
 
     const handleLogout = () => {
-        sessionStorage.removeItem('token'); // Clear token on logout
+        sessionStorage.removeItem('token');
         setMessage('You have been logged out.');
         setActiveForm('signin');
-        onLogout(); // Notify parent component about logout
+        onLogout();
     };
 
     return (
