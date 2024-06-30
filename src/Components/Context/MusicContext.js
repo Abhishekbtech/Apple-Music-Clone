@@ -37,8 +37,6 @@ export const MusicProvider = ({ children }) => {
         }
     };
 
-    
-
     useEffect(() => {
         fetchFavorites();
     },[selectedMusic]);
