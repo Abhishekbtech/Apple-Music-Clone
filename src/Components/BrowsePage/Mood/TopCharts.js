@@ -34,18 +34,8 @@ function TopCharts() {
     };
 
     const handleSongClick = (song) => {
-        // setSelectedMusic({
-        //     title: song.title,
-        //     _id: song._id,
-        //     audio_url: song.songs,
-        //     thumbnail: song.thumbnail,
-        // });
         navigate('/browse/details', {state :{song}})
     };
-
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
 
     return (
         <>
