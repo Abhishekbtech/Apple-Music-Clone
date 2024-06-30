@@ -7,7 +7,6 @@ function RadioPage() {
 
     useEffect(() => {
         fetchFavoriteShows();
-        // window.location.reload();
     },[]);
 
     const fetchFavoriteShows = async () => {
