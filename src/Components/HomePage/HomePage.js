@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import IM from './Image/large.webp';
-import im from '../imagr/icons8-apple-24.png'
+import im from '../Image/icons8-apple-24.png'
 
 function HomePage() {
     
