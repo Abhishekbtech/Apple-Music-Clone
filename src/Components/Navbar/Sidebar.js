@@ -45,8 +45,8 @@ const Sidebar = () => {
         <>
 
             <div className="md:hidden flex items-center p-4 pt-7 fixed top-0  z-20">
-                <button onClick={() => setIsSidebarOpen(true)} className="text-black">
-                    <MenuIcon className="h-6 w-6" />
+                <button onClick={() => setIsSidebarOpen(true)}>
+                    <MenuIcon className="h-6 w-6 text-black" />
                 </button>
             </div>
 
@@ -105,7 +105,7 @@ const Sidebar = () => {
                     </button>
                 </div>
                 <button onClick={() => setIsSidebarOpen(false)} className="absolute top-4 right-4 md:hidden text-gray-700">
-                    <XIcon className="h-6 w-6" />
+                    <XIcon className="h-6 w-6 text-white" />
                 </button>
             </div>
         </>
