@@ -14,7 +14,7 @@ function HomePage() {
     return (
         <div>
             <div className="text-center mt-19 pt-10 text-white">
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center mt-8">
                     <img src={im} alt="Logo" className="h-8 w-8" />
                     <span className="ml-3 text-2xl font-semibold">Music</span>
                 </div>
