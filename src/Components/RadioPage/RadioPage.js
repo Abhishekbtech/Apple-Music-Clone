@@ -44,7 +44,7 @@ function RadioPage() {
 
     return (
         <div className="min-h-screen bg-gray-900 text-white p-8">
-            <h1 className="text-3xl font-bold mb-6">Favorite Songs</h1>
+            <h1 className="text-3xl font-bold mb-6 mt-10">Favorite Songs</h1>
             <div className="overflow-x-auto">
                 <table className="min-w-full bg-gray-800">
                     <thead>
