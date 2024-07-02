@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     
     return (
-        <footer className="text-white">
+        <footer className="text-white mb-11">
             <div className="max-w-7xl mx-auto py-6 px-4">
                 <div className="flex flex-wrap justify-center space-x-4 space-y-2 sm:space-y-0 sm:space-x-4">
                     <a href="#" className="hover:underline">United States</a>
