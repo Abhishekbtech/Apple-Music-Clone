@@ -12,7 +12,7 @@ function App() {
   return (
     <MusicProvider className="bg-gradient-to-r from-red-600 via-red-900 to-black">
       <Router>
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen mb-10">
           <TopNavBar />
           <div className="flex flex-grow">
             <Sidebar />
