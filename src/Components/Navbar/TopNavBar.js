@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { UserIcon } from '@heroicons/react/outline';
 import Sing from '../SingINpage/Sing';
 import AudioPlayer from '../Context/AudioPlayer';
-import im from '../image/icons8-apple-24.png';
+import im from '../Image/icons8-apple-24.png';
 
 const TopNavBar = () => {
     const [isSignInOpen, setSignInOpen] = useState(false);
