@@ -1,18 +1,18 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { MusicContext } from './MusicContext';
 
-function AudioPlayer() {
+function AudioPlayer({ hidden }) {
     const { selectedMusic, favorites } = useContext(MusicContext);
     const [isFavorite, setIsFavorite] = useState(false);
 
     useEffect(() => {
-        setIsFavorite(favorites?.some(song => song._id === selectedMusic._id));
+        setIsFavorite(favorites?.some(song => song._id === selectedMusic?._id));
     }, [selectedMusic, favorites]);
 
     const handleFavoriteToggle = async () => {
-        const songId = selectedMusic._id;
+        const songId = selectedMusic?._id;
         let token = sessionStorage.getItem('token');
-        
+
         if (!token) {
             alert('Please log in to like a song.');
             return;
@@ -30,7 +30,6 @@ function AudioPlayer() {
                     'projectID': projectID
                 },
                 body: JSON.stringify({ songId })
-                
             });
 
             if (response.ok) {
@@ -45,9 +44,8 @@ function AudioPlayer() {
 
     return (
         <div className="navbar-audio-player flex flex-row items-center gap-5">
-            {/* <h3 className="text-lg font-semibold">{selectedMusic.title}</h3> */}
-            <img src={selectedMusic.thumbnail ? selectedMusic.thumbnail : 'https://via.placeholder.com/150'} alt={selectedMusic.title} className="w-16 h-16 rounded" />
-            {selectedMusic.audio_url ? (
+            <img src={selectedMusic?.thumbnail ? selectedMusic.thumbnail : 'https://via.placeholder.com/150'} alt={selectedMusic?.title} className="w-16 h-16 rounded" />
+            {selectedMusic?.audio_url ? (
                 <audio controls autoPlay src={selectedMusic.audio_url}>
                     Your browser does not support the audio element.
                 </audio>
