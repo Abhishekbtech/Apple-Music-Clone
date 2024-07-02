@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { HomeIcon, ViewGridIcon, LibraryIcon, MusicNoteIcon, SearchIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { MusicContext } from '../Context/MusicContext';
-import im from '../image/icons8-apple-24.png';
+import im from '../Image/icons8-apple-24.png';
 
 const Sidebar = () => {
     const [searchQuery, setSearchQuery] = useState('');
