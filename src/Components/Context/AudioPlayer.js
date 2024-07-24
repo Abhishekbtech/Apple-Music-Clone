@@ -54,9 +54,9 @@ function AudioPlayer({ hidden }) {
             )}
             <button 
                 onClick={handleFavoriteToggle} 
-                className={`ml-4 px-4 py-2 ${isFavorite ? 'bg-red-500' : 'bg-gray-500'} text-white rounded`}
+                className={`ml-4   text-white rounded`}
             >
-                {isFavorite ? 'Unlike' : 'Like'}
+                {isFavorite ? '❤' : '🤍'}
             </button>
         </div>
     );
