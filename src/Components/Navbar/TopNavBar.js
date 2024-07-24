@@ -3,6 +3,7 @@ import { UserIcon } from '@heroicons/react/outline';
 import Sing from '../SingINpage/Sing';
 import AudioPlayer from '../Context/AudioPlayer';
 import im from '../Image/icons8-apple-24.png';
+import { Link } from 'react-router-dom';
 
 const TopNavBar = () => {
     const [isSignInOpen, setSignInOpen] = useState(false);
@@ -39,10 +40,10 @@ const TopNavBar = () => {
     return (
         <>
             <div className="bg-gradient-to-r from-indigo-900 via-purple-400 to-purple-600 shadow-md fixed w-full flex items-center justify-between px-4 py-2 z-10">
-                <div className="p-4 flex items-center ml-4">
+                <Link to='/' className="p-4 flex items-center ml-4">
                     <img src={im} alt="Logo" className="h-8 w-8" />
                     <span className="ml-3 text-3xl font-semibold text-white">Music</span>
-                </div>
+                </Link>
                 <div className="hidden md:flex items-center ml-20">
                     {!isMobile && <AudioPlayer />}
                 </div>
