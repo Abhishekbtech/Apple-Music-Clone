@@ -82,7 +82,7 @@ function Sing({ isOpen, onClose, onLogin, onLogout }) {
         }
         try {
             await signup(formData.name, formData.email, formData.password);
-            setMessage('Sign up successful! You can now log in.');
+            setMessage('');
             setActiveForm('signin');
         } catch (error) {
             console.error('Error:', error);
@@ -99,7 +99,7 @@ function Sing({ isOpen, onClose, onLogin, onLogout }) {
         }
         try {
             await updatePassword(formData.name, formData.email, formData.passwordCurrent, formData.passwordNew);
-            setMessage('Password update success!');
+            setMessage('');
         } catch (error) {
             console.error('Error:', error);
             setMessage('Password update failed. Please try again.');
@@ -108,7 +108,7 @@ function Sing({ isOpen, onClose, onLogin, onLogout }) {
 
     const handleLogout = () => {
         sessionStorage.removeItem('token');
-        setMessage('You have been logged out.');
+        setMessage('');
         setActiveForm('signin');
         onLogout();
     };
