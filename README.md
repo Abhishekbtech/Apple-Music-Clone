@@ -51,4 +51,4 @@ The project aims to create an **Apple Music** clone application using HTML, Tail
 
 ## Deploy on Vercel
 
-Deployment link of my project 'https://apple-music-clone-abhishek-chuahans-projects.vercel.app/'
+Deployment link of my project 'https://apple-music-clone-eight.vercel.app/'
