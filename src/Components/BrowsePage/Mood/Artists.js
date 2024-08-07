@@ -62,7 +62,7 @@ function Artists() {
                         songs.map((song) => (
                             <div
                                 key={song._id}
-                                className="cursor-pointe p-2"
+                                className="cursor-pointer p-2 transition-transform transform hover:scale-105"
                                 onClick={() => handleSongClick(song)}
                                 // onMouseEnter={() => setHoveredSong(song)}
                                 // onMouseLeave={() => setHoveredSong(null)}
