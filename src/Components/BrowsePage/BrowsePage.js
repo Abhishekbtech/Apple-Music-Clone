@@ -3,6 +3,7 @@ import Footer from './Footer/Footer';
 
 // Lazy load mood components and Artists component
 const Romantic = React.lazy(() => import('./Mood/Romantic'));
+const Tending = React.lazy(() => import('./Mood/Tending'))
 const Excited = React.lazy(() => import('./Mood/Excited'));
 const Happy = React.lazy(() => import('./Mood/Happy'));
 const Sad = React.lazy(() => import('./Mood/Sad'));
@@ -16,6 +17,9 @@ function BrowsePage() {
             <div className="container mx-auto p-4 bg-gradient-to-br from-indigo-900 via-purple-400 to-purple-600 text-white">
                 <h1 className="text-2xl font-bold mb-4 pt-3 mt-11">Featured Music</h1>
                 <Suspense fallback={<div>Loading...</div>}>
+                    <section className="mt-8">
+                        <Tending />
+                    </section>
                     <section className="mt-8">
                         <NewReleases />
                     </section>
