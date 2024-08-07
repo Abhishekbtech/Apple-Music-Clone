@@ -46,7 +46,7 @@ function AudioPlayer({ hidden }) {
         <div className="navbar-audio-player flex flex-row items-center gap-5">
             <img src={selectedMusic?.thumbnail ? selectedMusic.thumbnail : 'https://via.placeholder.com/150'} alt={selectedMusic?.title} className="w-16 h-16 rounded" />
             {selectedMusic?.audio_url ? (
-                <audio controls autoPlay src={selectedMusic.audio_url}>
+                <audio controls autoPlay src={selectedMusic.audio_url} controlsList="nodownload noplaybackrate">
                     Your browser does not support the audio element.
                 </audio>
             ) : (
