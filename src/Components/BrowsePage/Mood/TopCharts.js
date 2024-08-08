@@ -49,6 +49,7 @@ function TopCharts() {
                     draggable={false}
                     infinite={true}
                     itemClass="carousel-item-padding-40-px"
+                    className='z-0 relative'
                 >
                     {songs.map((song) => (
                         <div
