@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { HomeIcon, ViewGridIcon, LibraryIcon, MusicNoteIcon, SearchIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { MusicContext } from '../Context/MusicContext';
@@ -9,6 +9,8 @@ const Sidebar = () => {
     const [searchResults, setSearchResults] = useState([]);
     const { setSelectedMusic } = useContext(MusicContext);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isSearchActive, setIsSearchActive] = useState(false);
+    const searchRef = useRef(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -32,6 +34,19 @@ const Sidebar = () => {
         fetchData();
     }, [searchQuery]);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (searchRef.current && !searchRef.current.contains(event.target)) {
+                setIsSearchActive(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     const handleResultClick = (song) => {
         setSelectedMusic({
             title: song.title,
@@ -39,11 +54,12 @@ const Sidebar = () => {
             audio_url: song.audio_url,
             thumbnail: song.thumbnail,
         });
+        setIsSearchActive(false);
     };
 
     return (
         <>
-            <div className="md:hidden flex items-center p-4 pt-7 fixed top-0  z-20">
+            <div className="md:hidden flex items-center p-4 pt-7 fixed top-0 z-20">
                 <button onClick={() => setIsSidebarOpen(true)}>
                     <MenuIcon className="h-6 w-6 text-black" />
                 </button>
@@ -55,7 +71,7 @@ const Sidebar = () => {
                     <span className="ml-3 text-3xl font-semibold text-white">Music</span>
                 </Link>
                 <div className="p-4 mt-6">
-                    <div className="relative">
+                    <div className="relative" ref={searchRef}>
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <SearchIcon className="h-5 w-5 text-gray-500" />
                         </div>
@@ -64,20 +80,23 @@ const Sidebar = () => {
                             placeholder="Search"
                             className="w-full pl-10 pr-3 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:bg-white focus:border-gray-500"
                             value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onChange={(e) => {
+                                setSearchQuery(e.target.value);
+                                setIsSearchActive(true);
+                            }}
                         />
+                        {isSearchActive && searchResults.length > 0 && (
+                            <div className="mt-2 max-h-48 overflow-y-auto bg-white shadow-lg rounded-lg absolute z-40 w-full">
+                                <ul>
+                                    {searchResults.slice(0, 5).map((result, index) => (
+                                        <li key={index} className="p-2 hover:bg-gray-200 cursor-pointer" onClick={() => handleResultClick(result)}>
+                                            {result.title}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
                     </div>
-                    {searchResults.length > 0 && (
-                        <div className="mt-2 bg-white shadow-lg rounded-lg">
-                            <ul>
-                                {searchResults.map((result, index) => (
-                                    <li key={index} className="p-2 hover:bg-gray-200 cursor-pointer" onClick={() => handleResultClick(result)}>
-                                        {result.title}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
                 </div>
                 <div className="mt-6 pl-3">
                     <nav>
@@ -94,10 +113,10 @@ const Sidebar = () => {
                                     <p className='ml-4'>Browse</p>
                                 </li>
                             </Link>
-                            <Link to="/radio">
+                            <Link to="/favouritesong">
                                 <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">
                                     <LibraryIcon className="h-6 w-6" />
-                                    <p className='ml-4'>Library</p>
+                                    <p className='ml-4'>Favourite Songs</p>
                                 </li>
                             </Link>
                         </ul>
