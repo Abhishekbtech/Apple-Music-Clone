@@ -116,13 +116,13 @@ function Sing({ isOpen, onClose, onLogin, onLogout }) {
     return (
         <div className={`fixed inset-0 flex items-center justify-center ${isOpen ? "visible" : "invisible"}`}>
             <div className="fixed inset-0 bg-black opacity-50"></div>
-            <div className="backdrop-blur-25 backdrop-saturate-200 bg-black bg-opacity-20 rounded-12 border border-gray-400 border-opacity-30 p-8 rounded shadow-lg z-50 relative text-black">
+            <div className="backdrop-blur-25 backdrop-saturate-200 bg-black bg-opacity-20 rounded-12 border border-gray-400 border-opacity-30 p-8 rounded shadow-lg z-1000 relative text-black">
                 <div className="relative">
                     <button className="absolute top-0 right-0 text-white hover:text-red-900 font-bold" onClick={onClose}>
                         X
                     </button>
                 </div>
-                {message && <p className="text-center text-red-500 mb-4">{message}</p>}
+                {/* {message && <p className="text-center text-red-500 mb-4">{message}</p>} */}
                 {activeForm === "signin" && (
                     <form className="mb-4 mt-10" onSubmit={handleSignIn}>
                         <h2 className="text-lg font-semibold mb-4 text-center text-white">Sign In</h2>
