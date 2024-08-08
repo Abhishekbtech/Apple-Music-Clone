@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { MusicContext } from './MusicContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AudioPlayer({ hidden }) {
     const { selectedMusic, favorites } = useContext(MusicContext);
@@ -14,7 +16,7 @@ function AudioPlayer({ hidden }) {
         let token = sessionStorage.getItem('token');
 
         if (!token) {
-            alert('Please log in to like a song.');
+            toast.error('Please log in to like a song.');
             return;
         }
 
@@ -34,11 +36,13 @@ function AudioPlayer({ hidden }) {
 
             if (response.ok) {
                 setIsFavorite(newIsFavorite);
+                toast.success(`Song ${newIsFavorite ? 'added to' : 'removed from'} favorites!`);
             } else {
-                console.error('Failed to update favorite status');
+                toast.error('Failed to update favorite status');
             }
         } catch (error) {
             console.error('Error:', error);
+            toast.error('An error occurred while updating the favorite status');
         }
     };
 
@@ -54,10 +58,11 @@ function AudioPlayer({ hidden }) {
             )}
             <button 
                 onClick={handleFavoriteToggle} 
-                className={`ml-4   text-white rounded`}
+                className={`ml-4 text-white rounded`}
             >
                 {isFavorite ? '❤' : '🤍'}
             </button>
+            <ToastContainer />
         </div>
     );
 }
