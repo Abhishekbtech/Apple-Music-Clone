@@ -43,7 +43,6 @@ const Sidebar = () => {
 
     return (
         <>
-
             <div className="md:hidden flex items-center p-4 pt-7 fixed top-0  z-20">
                 <button onClick={() => setIsSidebarOpen(true)}>
                     <MenuIcon className="h-6 w-6 text-black" />
@@ -83,18 +82,24 @@ const Sidebar = () => {
                 <div className="mt-6 pl-3">
                     <nav>
                         <ul>
-                            <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">
-                                <HomeIcon className="h-6 w-6" />
-                                <Link to="/" className="ml-4">Home</Link>
-                            </li>
-                            <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">
-                                <ViewGridIcon className="h-6 w-6" />
-                                <Link to="/browse" className="ml-4">Browse</Link>
-                            </li>
-                            <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">
-                                <LibraryIcon className="h-6 w-6" />
-                                <Link to="/radio" className="ml-4">Library</Link>
-                            </li>
+                            <Link to="/">
+                                <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">
+                                    <HomeIcon className="h-6 w-6" />
+                                    <p className='ml-4'>Home</p>
+                                </li>
+                            </Link>
+                            <Link to="/browse">
+                                <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">
+                                    <ViewGridIcon className="h-6 w-6" />
+                                    <p className='ml-4'>Browse</p>
+                                </li>
+                            </Link>
+                            <Link to="/radio">
+                                <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">
+                                    <LibraryIcon className="h-6 w-6" />
+                                    <p className='ml-4'>Library</p>
+                                </li>
+                            </Link>
                         </ul>
                     </nav>
                 </div>
