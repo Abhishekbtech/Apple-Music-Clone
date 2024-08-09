@@ -1,13 +1,15 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState} from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { MusicContext } from '../../Context/MusicContext';
+import { useNavigate } from 'react-router-dom';
+// import { MusicContext } from '../../Context/MusicContext';
 
 function Artists() {
     const [songs, setSongs] = useState([]);
+    const navigator = useNavigate()
     // const [error, setError] = useState(null);
     // const [hoveredSong, setHoveredSong] = useState(null);
-    const { setSelectedMusic } = useContext(MusicContext);
+    // const { setSelectedMusic } = useContext(MusicContext);
 
     useEffect(() => {
         fetch('https://academics.newtonschool.co/api/v1/music/artist', {
@@ -39,12 +41,8 @@ function Artists() {
     };
 
     const handleSongClick = (song) => {
-        setSelectedMusic({
-            title: song.title,
-            _id: song._id,
-            audio_url: song.songs[0],
-            thumbnail: song.thumbnail,
-        });
+        const id = song._id
+        navigator(`/artist/${id}`)
     };
 
     return (
