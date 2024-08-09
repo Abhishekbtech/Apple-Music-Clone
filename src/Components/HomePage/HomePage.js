@@ -23,7 +23,6 @@ function HomePage() {
                 <p className=" text-lg">genres you’re listening to. 1 month free, then </p>
                 <p className="text-lg">$10.99/month.</p>
                 <button className="bg-red-500 text-white px-6 py-3 mt-4 rounded-full">Try It Free</button><br /><br />
-                <a href='https://www.apple.com/apple-music/' target='_blank' >Learn More </a>
             </div>
             <img src={IM} alt="Main content" className="mt-3 mx-auto" />
         </div>
