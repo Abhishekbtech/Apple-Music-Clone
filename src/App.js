@@ -6,6 +6,7 @@ import BrowsePage from './Components/BrowsePage/BrowsePage';
 import RadioPage from './Components/RadioPage/RadioPage';
 import { MusicProvider } from './Components/Context/MusicContext';
 import Details from './Components/Details/Details';
+import Artist from './Components/Artist/Artist';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/browse" element={<BrowsePage />} />
                 <Route path="/browse/details" element={<Details />} />
                 <Route path="/favouritesong" element={<RadioPage />} />
+                <Route path='/artist/:id' element={<Artist/>}/>
               </Routes>
             </div>
           </div>
