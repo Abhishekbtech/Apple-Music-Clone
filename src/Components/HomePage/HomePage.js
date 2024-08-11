@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
 import IM from './Image/large.webp';
 import im from '../Image/icons8-apple-24.png'
+import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
-    
+    const navigator = useNavigate()
     useEffect(() => {
         document.body.style.overflow = 'hidden';
         return () => {
             document.body.style.overflow = 'unset';
         };
     }, []);
+
+    const handlingClick = (() => {
+        navigator('/signup')
+    })
 
     return (
         <div>
@@ -22,7 +27,7 @@ function HomePage() {
                 <p className="mt-4 text-lg mb-0">Get playlists and albums inspired by the artists and </p>
                 <p className=" text-lg">genres you’re listening to. 1 month free, then </p>
                 <p className="text-lg">$10.99/month.</p>
-                <button className="bg-red-500 text-white px-6 py-3 mt-4 rounded-full">Try It Free</button><br /><br />
+                <button onClick={handlingClick}className="bg-red-500 text-white px-6 py-3 mt-4 rounded-full">Try It Free</button><br /><br />
             </div>
             <img src={IM} alt="Main content" className="mt-3 mx-auto" />
         </div>
