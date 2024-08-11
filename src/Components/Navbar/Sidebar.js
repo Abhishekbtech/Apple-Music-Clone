@@ -102,19 +102,19 @@ const Sidebar = () => {
                     <nav>
                         <ul>
                             <Link to="/">
-                                <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">
+                                <li className="flex items-center p-2 text-white hover:bg-black rounded-md cursor-pointer">
                                     <HomeIcon className="h-6 w-6" />
                                     <p className='ml-4'>Home</p>
                                 </li>
                             </Link>
                             <Link to="/browse">
-                                <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">
+                                <li className="flex items-center p-2 text-white hover:bg-black rounded-md cursor-pointer">
                                     <ViewGridIcon className="h-6 w-6" />
                                     <p className='ml-4'>Browse</p>
                                 </li>
                             </Link>
                             <Link to="/favouritesong">
-                                <li className="flex items-center p-2 text-white hover:bg-black cursor-pointer">
+                                <li className="flex items-center p-2 text-white hover:bg-black rounded-md cursor-pointer">
                                     <LibraryIcon className="h-6 w-6" />
                                     <p className='ml-4'>Favourite Songs</p>
                                 </li>
