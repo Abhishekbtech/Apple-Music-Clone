@@ -7,6 +7,8 @@ import RadioPage from './Components/RadioPage/RadioPage';
 import { MusicProvider } from './Components/Context/MusicContext';
 import Details from './Components/Details/Details';
 import Artist from './Components/Artist/Artist';
+import AuthForm from './Components/SingINpage/AuthForm';
+import ResetPassword from './Components/SingINpage/ResetPassword'
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
                 <Route path="/browse/details" element={<Details />} />
                 <Route path="/favouritesong" element={<RadioPage />} />
                 <Route path='/artist/:id' element={<Artist/>}/>
+                <Route path='/signup' element={<AuthForm/>}/>
+                <Route path='/updatepassword' element={<ResetPassword/>}/>
               </Routes>
             </div>
           </div>
