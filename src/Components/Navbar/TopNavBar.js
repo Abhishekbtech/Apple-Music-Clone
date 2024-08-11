@@ -1,30 +1,50 @@
 import React, { useState, useEffect } from 'react';
-import { UserIcon } from '@heroicons/react/outline';
-import Sing from '../SingINpage/Sing';
+import { Menu, MenuItem } from '@mui/material';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AudioPlayer from '../Context/AudioPlayer';
 import im from '../Image/icons8-apple-24.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import './ind.css'
 
 const TopNavBar = () => {
-    const [isSignInOpen, setSignInOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [username, setUsername] = useState('');
+    const navigate = useNavigate();
 
-    const openSignIn = () => {
-        setSignInOpen(true);
-    };
+    useEffect(() => {
+        const token = sessionStorage.getItem('token');
+        if (token) {
+            setIsLoggedIn(true);
+            const storedUsername = sessionStorage.getItem('name');
+            setUsername(storedUsername || '');
+        }
+    }, []);
 
-    const closeSignIn = () => {
-        setSignInOpen(false);
-    };
-
-    const handleLogin = () => {
-        setIsLoggedIn(true);
+    const handleMenuOpen = (event) => {
+        if (isLoggedIn) {
+            setAnchorEl(event.currentTarget);
+        } else {
+            navigate('/signup');
+        }
     };
 
     const handleLogout = () => {
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('username');
         setIsLoggedIn(false);
-        setSignInOpen(false);
+        setUsername('');
+        handleMenuClose();
+    };
+
+    const handleingPassword = () => {
+        navigate('/updatepassword');
+        handleMenuClose();
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
     };
 
     const handleResize = () => {
@@ -48,19 +68,25 @@ const TopNavBar = () => {
                     {!isMobile && <AudioPlayer />}
                 </div>
                 <div className="flex items-center space-x-2">
-                    <button className="bg-pink-600 text-white px-3 py-3 rounded-full" onClick={openSignIn}>
-                        <UserIcon className="h-4 w-4 inline-block mr-1" />
-                        {isLoggedIn ? 'Hello User' : 'Sign In'}
-                    </button>
+                    <AccountCircleIcon className="text-gray-700 cursor-pointer" onClick={handleMenuOpen} />
+                    {isLoggedIn ? (
+                        <span>Hi {username}</span>
+                    ) : (
+                        <span className="text-gray-700" onClick={() => navigate('/signup')}>
+                            Sign up
+                        </span>
+                    )}
+                    <Menu
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        onClose={handleMenuClose}
+                    >
+                        <MenuItem onClick={handleingPassword}>Update Password</MenuItem>
+                        <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                    </Menu>
                 </div>
-                <Sing
-                    isOpen={isSignInOpen}
-                    onClose={closeSignIn}
-                    onLogin={handleLogin}
-                    onLogout={handleLogout}
-                />
             </div>
-            <div className="md:hidden fixed bottom-0 w-full bg-gradient-to-r from-indigo-900 via-purple-400 to-purple-600 shadow-md p-4">
+            <div id="ind" className="md:hidden fixed bottom-0 w-full bg-gradient-to-r from-indigo-900 via-purple-400 to-purple-600 shadow-md p-4">
                 {isMobile && <AudioPlayer />}
             </div>
         </>
