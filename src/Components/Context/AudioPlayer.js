@@ -65,7 +65,7 @@ function AudioPlayer({ hidden }) {
                 onClick={handleFavoriteToggle} 
                 className={`ml-4 text-white rounded`}
             >
-                {isFavorite ? '❤' : '🤍'}
+                {isFavorite ? '💚' : '🤍'}
             </button>
             <ToastContainer />
         </div>
