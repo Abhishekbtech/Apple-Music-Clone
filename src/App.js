@@ -9,6 +9,7 @@ import Details from './Components/Details/Details';
 import Artist from './Components/Artist/Artist';
 import AuthForm from './Components/SingINpage/AuthForm';
 import ResetPassword from './Components/SingINpage/ResetPassword'
+import MusicPlans from './Components/HomePage/MusicPlans';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 <Route path='/artist/:id' element={<Artist/>}/>
                 <Route path='/signup' element={<AuthForm/>}/>
                 <Route path='/updatepassword' element={<ResetPassword/>}/>
+                <Route path='/plans' element={<MusicPlans/>}/>
               </Routes>
             </div>
           </div>
