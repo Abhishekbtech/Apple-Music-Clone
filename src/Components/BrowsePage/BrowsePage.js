@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import Footer from './Footer/Footer';
 
-// Lazy load mood components and Artists component
 const Romantic = React.lazy(() => import('./Mood/Romantic'));
 const Tending = React.lazy(() => import('./Mood/Tending'))
 const Excited = React.lazy(() => import('./Mood/Excited'));
