@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import im from '../Image/icons8-apple-24.png';
+import im from '../Image/apple-icon-831x1024-suvunx6x-removebg-preview.png';
 
 const MusicPlans = () => {
     const navigate = useNavigate();
@@ -19,11 +19,11 @@ const MusicPlans = () => {
     };
 
     return (
-        <div className="min-h-screen pt-20 pb-24 bg-gray-100">
+        <div className="min-h-screen pt-20 pb-24 bg-black">
             <div className="text-center mb-8">
                 <div className="flex items-center justify-center space-x-4">
                     <img src={im} alt="Apple Music" className="h-10 sm:h-12 md:h-16" />
-                    <p className="text-3xl sm:text-4xl md:text-5xl font-bold">Music</p>
+                    <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Music</p>
                 </div>
             </div>
             <div className="flex flex-wrap justify-center space-y-6 sm:space-y-0 sm:space-x-4">
@@ -39,7 +39,8 @@ const MusicPlans = () => {
                     </ul>
                     <button
                         onClick={() => handleClick('Voice Plan')}
-                        className="bg-blue-500 mt-5 text-white px-4 py-2 rounded-lg w-full"
+                        id='backgroundRed'
+                        className="bg-blue-500 mt-16 text-white px-4 py-2 rounded-lg w-full"
                     >
                         Choose a Plan
                     </button>
@@ -57,12 +58,13 @@ const MusicPlans = () => {
                     </ul>
                     <button
                         onClick={() => handleClick('Individual Plan')}
+                        id='backgroundRed'
                         className="bg-blue-500 mt-5 text-white px-4 py-2 rounded-lg w-full"
                     >
                         Choose a Plan
                     </button>
                 </div>
-                <div className="bg-white rounded-lg shadow-lg p-6 w-full sm:w-64">
+                <div className="bg-white  rounded-lg shadow-lg p-6 w-full sm:w-64">
                     <h2 className="text-xl font-bold">Family Plan</h2>
                     <p className="text-lg mt-2">$14.99/month</p>
                     <hr className="my-4" />
@@ -75,6 +77,7 @@ const MusicPlans = () => {
                     </ul>
                     <button
                         onClick={() => handleClick('Family Plan')}
+                        id='backgroundRed'
                         className="bg-blue-500 mt-5 text-white px-4 py-2 rounded-lg w-full"
                     >
                         Choose a Plan
