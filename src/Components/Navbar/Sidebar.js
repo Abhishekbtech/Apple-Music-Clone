@@ -61,7 +61,7 @@ const Sidebar = () => {
         <>
             <div className="md:hidden flex items-center p-4 pt-7 fixed top-0 z-20">
                 <button onClick={() => setIsSidebarOpen(true)}>
-                    <MenuIcon className="h-6 w-6 text-black" />
+                    <MenuIcon className="h-6 w-6 text-white" />
                 </button>
             </div>
 
@@ -123,7 +123,7 @@ const Sidebar = () => {
                     </nav>
                 </div>
                 <div className="absolute bottom-4 left-4">
-                    <button className="flex items-center text-gray-700 hover:text-gray-900">
+                    <button className="flex items-center text-white hover:text-gray-900">
                         <MusicNoteIcon className="h-6 w-6" />
                         <span className="ml-2">Open in Music</span>
                     </button>
