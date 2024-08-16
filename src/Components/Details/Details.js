@@ -18,7 +18,7 @@ function Details() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-900 text-white p-4 md:p-8">
+        <div className="min-h-screen bg-black text-white p-4 md:p-8">
             <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 mt-12 md:mt-11">{song?.title}</h1>
             <div className="overflow-x-auto">
                 <table className="w-full bg-gray-800">
