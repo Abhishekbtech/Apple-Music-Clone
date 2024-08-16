@@ -11,7 +11,7 @@ function Artist() {
 
     useEffect(() => {
         async function fetchArtist() {
-            try {
+            
                 const response = await fetch('https://academics.newtonschool.co/api/v1/music/artist/64ce7c0bbbbada037c35edab', {
                     headers: {
                         'projectId': 'u0kdju5bps0g',
@@ -20,11 +20,7 @@ function Artist() {
                 const data = await response.json();
                 setArtist(data);
                 console.log("data", data)
-            } catch (error) {
-                console.error('Error fetching artist:', error);
             }
-        }
-        
         fetchArtist();
     }, [])
 
