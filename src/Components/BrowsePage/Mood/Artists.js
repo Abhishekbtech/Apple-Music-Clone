@@ -1,15 +1,13 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { useNavigate } from 'react-router-dom';
-// import { MusicContext } from '../../Context/MusicContext';
+// import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Artists() {
     const [songs, setSongs] = useState([]);
-    const navigator = useNavigate()
-    // const [error, setError] = useState(null);
-    // const [hoveredSong, setHoveredSong] = useState(null);
-    // const { setSelectedMusic } = useContext(MusicContext);
+    // const navigator = useNavigate();
 
     useEffect(() => {
         fetch('https://academics.newtonschool.co/api/v1/music/artist', {
@@ -19,7 +17,6 @@ function Artists() {
         })
             .then(response => response.json())
             .then(data => setSongs(data.data))
-            // .catch(error => setError(error.message));
     }, []);
 
     const responsive = {
@@ -41,8 +38,7 @@ function Artists() {
     };
 
     const handleSongClick = (song) => {
-        const id = song._id
-        navigator(`/artist/${id}`)
+        toast.success(`${song.name}'s page under Working`);
     };
 
     return (
@@ -63,21 +59,15 @@ function Artists() {
                                 key={song._id}
                                 className="cursor-pointer p-2 transition-transform transform hover:scale-105"
                                 onClick={() => handleSongClick(song)}
-                                // onMouseEnter={() => setHoveredSong(song)}
-                                // onMouseLeave={() => setHoveredSong(null)}
                             >
                                 <img src={song.image} alt={song.title} className="w-full h-auto mb-2 rounded" />
                                 <h3 className="text-lg font-semibold truncate">{song.name}</h3>
-                                {/* {hoveredSong && hoveredSong._id === song._id && (
-                                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white">
-                                        <p>Now playing</p>
-                                    </div>
-                                )} */}
                             </div>
                         ))
                     }
                 </Carousel>
             </div>
+            <ToastContainer />
         </>
     );
 }
