@@ -13,7 +13,7 @@ function HomePage() {
     }, []);
 
     const handlingClick = (() => {
-        navigator('/signup')
+        navigator('/plans')
     })
 
     return (
