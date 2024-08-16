@@ -13,8 +13,8 @@ const Artists = React.lazy(() => import('./Mood/Artists'));
 function BrowsePage() {
     return (
         <>
-            <div className="container mx-auto p-4 bg-gradient-to-br from-indigo-900 via-purple-400 to-purple-600 text-white">
-                <h1 className="text-2xl font-bold mb-4 pt-3 mt-11">Featured Music</h1>
+            <div className="container p-4 bg-black text-white">
+                <h1 className="text-3xl text-center font-bold mb-4 pt-3 mt-11">Featured Music</h1>
                 <Suspense fallback={<div>Loading...</div>}>
                     <section className="mt-8">
                         <Tending />
