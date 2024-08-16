@@ -12,6 +12,7 @@ import ResetPassword from './Components/SingINpage/ResetPassword'
 import MusicPlans from './Components/HomePage/MusicPlans';
 
 function App() {
+  
   return (
     <MusicProvider className="bg-gradient-to-r from-red-600 via-red-900 to-black">
       <Router>
