@@ -87,7 +87,7 @@ function RadioPage() {
 
     return (
         <>
-            <div className="min-h-screen bg-gray-900 text-white p-8">
+            <div className="min-h-screen bg-black text-white p-8">
                 <h1 className="text-3xl font-bold mb-6 mt-10">Favorite Songs</h1>
                 {loading ? (
                     <div className="text-center text-lg">Loading...</div>
