@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, MenuItem } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AudioPlayer from '../Context/AudioPlayer';
-import im from '../Image/icons8-apple-24.png';
+import im from '../Image/apple-icon-831x1024-suvunx6x-removebg-preview.png';
 import { Link, useNavigate } from 'react-router-dom';
 import './ind.css'
 
@@ -59,7 +59,7 @@ const TopNavBar = () => {
 
     return (
         <>
-            <div className="bg-gradient-to-r from-indigo-900 via-purple-400 to-purple-600 shadow-md fixed w-full flex items-center justify-between px-4 py-2 z-10">
+            <div className="bg-gradient-to-r from-indigo-900 via-purple-400 to-purple-600 shadow-md fixed w-full flex items-center justify-between px-4 py-2 z-10" id='backgroundRed'>
                 <Link to='/' className="p-4 flex items-center ml-4">
                     <img src={im} alt="Logo" className="h-8 w-8" />
                     <span className="ml-3 text-3xl font-semibold text-white">Music</span>
@@ -68,11 +68,11 @@ const TopNavBar = () => {
                     {!isMobile && <AudioPlayer />}
                 </div>
                 <div className="flex items-center space-x-2">
-                    <AccountCircleIcon className="text-red-700 cursor-pointer" onClick={handleMenuOpen} />
+                    <AccountCircleIcon className="text-white cursor-pointer" onClick={handleMenuOpen} />
                     {isLoggedIn ? (
-                        <span>Hi {username}</span>
+                        <span className="text-white">Hi {username}</span>
                     ) : (
-                        <span className="text-gray-700" onClick={() => navigate('/signup')}>
+                        <span className="text-white" onClick={() => navigate('/signup')}>
                             Sign up
                         </span>
                     )}
