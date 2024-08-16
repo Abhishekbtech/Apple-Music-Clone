@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { HomeIcon, ViewGridIcon, LibraryIcon, MusicNoteIcon, SearchIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { MusicContext } from '../Context/MusicContext';
-import im from '../Image/icons8-apple-24.png';
+import im from '../Image/apple-icon-831x1024-suvunx6x-removebg-preview.png';
 
 const Sidebar = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -65,7 +65,7 @@ const Sidebar = () => {
                 </button>
             </div>
 
-            <div className={`fixed top-0 left-0 h-full w-64 bg-gradient-to-b from-indigo-900 to-purple-600 shadow-md transition-transform transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 z-30`}>
+            <div id='backgroundRed' className={`fixed top-0 left-0 h-full w-64 bg-gradient-to-b from-indigo-900 to-purple-600 shadow-md transition-transform transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 z-30`}>
                 <Link to='/' className="p-4 pl-10 flex items-center">
                     <img src={im} alt="Logo" className="h-8 w-8" />
                     <span className="ml-3 text-3xl font-semibold text-white">Music</span>
