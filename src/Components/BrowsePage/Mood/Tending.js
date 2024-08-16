@@ -5,7 +5,6 @@ import { MusicContext } from '../../Context/MusicContext';
 
 function Tending() {
     const [songs, setSongs] = useState([]);
-    const [error, setError] = useState(null);
     const [hoveredSong, setHoveredSong] = useState(null);
     const { setSelectedMusic } = useContext(MusicContext);
 
@@ -17,7 +16,6 @@ function Tending() {
         })
             .then(response => response.json())
             .then(data => setSongs(data.data))
-            .catch(error => setError(error.message));
     }, []);
 
     const handleSongClick = (song) => {
