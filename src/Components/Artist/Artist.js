@@ -6,23 +6,19 @@ function Artist() {
     const [artist, setArtist] = useState([]);
     const { setSelectedMusic } = useContext(MusicContext);
     const {id} = useParams()
-    console.log("id coming", id)
-    console.log("data", artist)
 
     useEffect(() => {
         async function fetchArtist() {
-            
-                const response = await fetch('https://academics.newtonschool.co/api/v1/music/artist/64ce7c0bbbbada037c35edab', {
-                    headers: {
-                        'projectId': 'u0kdju5bps0g',
-                    },
-                });
-                const data = await response.json();
-                setArtist(data);
-                console.log("data", data)
-            }
+            const response = await fetch(`https://academics.newtonschool.co/api/v1/music/artist/${id}`, {
+                headers: {
+                    'projectId': 'u0kdju5bps0g',
+                },
+            });
+            const data = await response.json();
+            setArtist(data);
+        }
         fetchArtist();
-    }, [])
+    }, [id])
 
     const handleSongClick = (song) => {
         setSelectedMusic({
@@ -69,11 +65,6 @@ function Artist() {
                                 </td>
                             </tr>
                         ))}
-                        {/* {
-                            artist.songs.map((song) => (
-                                <h3>{song.title}</h3>
-                            ))
-                        } */}
                     </tbody>
                 </table>
             </div>
