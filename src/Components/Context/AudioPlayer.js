@@ -36,7 +36,12 @@ function AudioPlayer({ hidden }) {
 
             if (response.ok) {
                 setIsFavorite(newIsFavorite);
-                toast.success(`Song ${newIsFavorite ? 'added to' : 'removed from'} favorites!`);
+                // if(newIsFavorite){
+                //     toast.success('Added to favorites!');
+                // }else{
+                //     toast.success('Removed from favorites!');
+                // }
+                // toast.success(`Song ${newIsFavorite ? 'added to' : 'removed from'} favorites!`);
             } else {
                 toast.error('Failed to update favorite status');
             }
