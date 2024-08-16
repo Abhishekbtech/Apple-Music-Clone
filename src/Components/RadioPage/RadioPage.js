@@ -61,9 +61,6 @@ function RadioPage() {
         const jwtToken = sessionStorage.getItem('token');
         if (!jwtToken) return;
 
-        // const confirmRemove = window.confirm('Are you sure you want to remove this song from your favorites?');
-        // if (!confirmRemove) return;
-
         try {
             const projectID = 'u0kdju5bps0g';
 
