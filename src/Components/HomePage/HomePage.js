@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import IM from './Image/large.webp';
-import im from '../Image/icons8-apple-24.png'
+import im from '../Image/apple-icon-831x1024-suvunx6x-removebg-preview.png'
 import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
