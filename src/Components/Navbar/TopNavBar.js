@@ -68,7 +68,7 @@ const TopNavBar = () => {
                     {!isMobile && <AudioPlayer />}
                 </div>
                 <div className="flex items-center space-x-2">
-                    <AccountCircleIcon className="text-gray-700 cursor-pointer" onClick={handleMenuOpen} />
+                    <AccountCircleIcon className="text-red-700 cursor-pointer" onClick={handleMenuOpen} />
                     {isLoggedIn ? (
                         <span>Hi {username}</span>
                     ) : (
