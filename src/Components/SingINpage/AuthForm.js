@@ -88,18 +88,18 @@ const AuthForm = () => {
     return (
         <div className="reset-password-modal">
             <div className="max-w-md mx-auto bg-white p-8 shadow-md rounded-md mt-20 relative z-10">
-                <button onClick={handleClose} className="absolute mb-4 font-semibold top-2 right-2 text-gray-600 hover:text-red-600">
+                <button onClick={handleClose} className="absolute mb-4 font-semibold top-2 right-2 text-black hover:text-red-600">
                     X
                 </button>
                 <div className="flex mb-4">
                     <button
-                        className={`flex-1 py-2 ${isLogin ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                        className={`flex-1 py-2 ${isLogin ? 'bg-[linear-gradient(98.3deg,_rgb(0,_0,_0)_10.6%,_rgb(255,_0,_0)_97.7%)] text-white' : 'bg-gray-200 text-gray-700'}`}
                         onClick={() => setIsLogin(true)}
                     >
                         Login
                     </button>
                     <button
-                        className={`flex-1 py-2 ${!isLogin ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                        className={`flex-1 py-2 ${!isLogin ? 'bg-[linear-gradient(98.3deg,_rgb(0,_0,_0)_10.6%,_rgb(255,_0,_0)_97.7%)] text-white' : 'bg-gray-200 text-gray-700'}`}
                         onClick={() => setIsLogin(false)}
                     >
                         Register
@@ -147,7 +147,7 @@ const AuthForm = () => {
                             required
                         />
                     </div>
-                    <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded-md w-full">
+                    <button type="submit" id='backgroundRed' className="bg-green-600 text-white px-4 py-2 rounded-md w-full">
                         {isLogin ? 'Login' : 'Register'}
                     </button>
                 </form>
@@ -156,12 +156,12 @@ const AuthForm = () => {
                     {isLogin ? (
                         <>
                             Don't have an account?
-                            <button onClick={toggleForm} className="text-green-600 ml-2">Register</button>
+                            <button onClick={toggleForm} className="text-red-600 ml-2">Register</button>
                         </>
                     ) : (
                         <>
                             Already have an account?
-                            <button onClick={toggleForm} className="text-green-600 ml-2">Login</button>
+                            <button onClick={toggleForm} className="text-red-600 ml-2">Login</button>
                         </>
                     )}
                 </p>
