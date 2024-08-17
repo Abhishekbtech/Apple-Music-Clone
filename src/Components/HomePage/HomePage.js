@@ -28,7 +28,7 @@ function HomePage() {
                 <p className="mt-4 text-lg mb-0">Get playlists and albums inspired by the artists and </p>
                 <p className=" text-lg">genres you’re listening to. 1 month free, then </p>
                 <p className="text-lg">$10.99/month.</p>
-                <button onClick={handlingClick}className="bg-red-500 text-white px-6 py-3 mt-4 rounded-full">Try It Free</button><br /><br />
+                <button onClick={handlingClick}className="bg-[linear-gradient(98.3deg,_rgb(0,_0,_0)_10.6%,_rgb(255,_0,_0)_97.7%)] text-white px-6 py-3 mt-4 rounded-full">Try It Free</button><br /><br />
             </div>
 
             <img src={IM} alt="Main content" className="mt-3 mx-auto" />
