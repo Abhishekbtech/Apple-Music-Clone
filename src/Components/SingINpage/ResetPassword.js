@@ -58,7 +58,7 @@ const ResetPassword = () => {
     return (
         <div className="reset-password-modal">
             <div className="reset-password-container max-w-md mx-auto bg-white p-8 shadow-md rounded-md mt-20 relative">
-                <button onClick={handleClose} className="absolute font-semibold top-2 right-2 text-gray-600 hover:text-red-600">
+                <button onClick={handleClose} className="absolute font-semibold top-2 right-2 text-black hover:text-red-600">
                     X
                 </button>
                 <h2 className="text-2xl font-bold mb-4 text-center">Update Password</h2>
@@ -111,7 +111,7 @@ const ResetPassword = () => {
                             required
                         />
                     </div>
-                    <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded-md w-full">
+                    <button type="submit" id='backgroundRed' className="bg-green-600 text-white px-4 py-2 rounded-md w-full">
                         Update Password
                     </button>
                 </form>
